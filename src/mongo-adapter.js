@@ -74,8 +74,11 @@ export class MongoAdapter {
 		}
 
 		const collection = this.db.collection(this._getCollectionName(query));
-
-		await collection.updateOne(query, { $set: values }, { upsert: true });
+		const updatedValues = {};
+		Object.assign(updatedValues, values, {
+			updated_at: Date.now,
+		});
+		await collection.updateOne(query, { $set: updatedValues }, { upsert: true });
 		return this.get(query);
 	}
 
