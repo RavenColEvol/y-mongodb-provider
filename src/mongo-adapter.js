@@ -32,7 +32,7 @@ export class MongoAdapter {
 
 			I will not use it for now, but may change that in the future.
 		*/
-		this.db = this.client.db(this.databaseName);
+		this.db = this.client.db();
 	}
 
 	/**
