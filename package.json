@@ -1,6 +1,6 @@
 {
-	"name": "@ravencolevol/y-mongodb-provider",
-	"version": "0.1.9",
+	"name": "@lamkoti/y-mongodb-provider",
+	"version": "0.0.1",
 	"description": "MongoDB database adapter for Yjs",
 	"type": "module",
 	"main": "./dist/y-mongodb.cjs",
