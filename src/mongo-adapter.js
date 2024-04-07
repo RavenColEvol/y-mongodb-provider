@@ -23,10 +23,7 @@ export class MongoAdapter {
 	constructor(connectionString, { collection, multipleCollections }) {
 		this.collection = collection;
 		this.multipleCollections = multipleCollections;
-		const connectionParams = parseMongoDBConnectionString(connectionString);
-		this.mongoUrl = connectionParams.linkWithoutDatabase;
-		this.databaseName = connectionParams.database;
-		this.client = new MongoClient(this.mongoUrl);
+		this.client = new MongoClient(connectionString);
 		/*
 			client.connect() is optional since v4.7
 			"However, MongoClient.connect can still be called manually and remains useful for
